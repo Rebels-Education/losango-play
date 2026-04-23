@@ -423,10 +423,43 @@ a { color: inherit; }
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+/* =========================================================
+   MISC HELPERS
+   ========================================================= */
+.sec-head-sub { font-size: 18px; color: var(--ink-600); line-height: 1.55; margin-top: 12px; text-wrap: pretty; }
+.courses-note { text-align: center; margin-top: 24px; font-size: 14px; color: var(--ink-500); max-width: 680px; margin-left: auto; margin-right: auto; }
+.mock-live-count { font-size: 11px; font-weight: 700; color: #6A7A8C; }
+
+/* for-whom layout */
+.forwhom-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: flex-start; }
+.forwhom-title { font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 44px); font-weight: 900; letter-spacing: -.02em; line-height: 1.1; margin: 14px 0 16px; color: var(--ink-900); }
+.forwhom-lead { font-size: 16px; color: var(--ink-600); line-height: 1.55; }
+
+/* checkout extras */
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.checkout-legal { font-size: 12px; color: var(--ink-500); margin: 0; }
+.checkout-note { font-size: 12px; color: var(--ink-500); display: flex; gap: 8px; align-items: flex-start; }
+
+.order-box { background: #fff; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--border-2); }
+.order-title { font-family: var(--font-display); font-weight: 900; font-size: 18px; }
+.order-desc { font-size: 13px; color: var(--ink-600); }
+.order-hr { border: 0; border-top: 1px solid var(--border-2); margin: 6px 0; }
+.order-row { display: flex; justify-content: space-between; font-size: 14px; }
+.order-discount { color: var(--success); }
+.order-total { font-family: var(--font-display); font-weight: 900; font-size: 18px; margin-top: 8px; color: var(--brand-orange); }
+
+.checkout-success { grid-column: 1 / -1; padding: 60px; text-align: center; }
+.success-icon { width: 72px; height: 72px; border-radius: 9999px; background: var(--success-bg); color: var(--success); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; }
+.checkout-success h3 { font-family: var(--font-display); font-size: 28px; font-weight: 900; margin: 0 0 10px; }
+.checkout-success p { font-size: 16px; color: var(--ink-600); max-width: 460px; margin: 0 auto 28px; line-height: 1.55; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 860px) {
   .hero-grid, .courses, .steps, .benefits, .numbers, .testimonials, .footer-grid, .modal-inner { grid-template-columns: 1fr; }
-  .pillars { grid-template-columns: 1fr; }
+  .pillars, .forwhom-layout { grid-template-columns: 1fr; }
+  .field-row { grid-template-columns: 1fr; }
   .section { padding: 64px 0; }
   .hero { padding: 80px 0; }
-  .forwhom-layout { grid-template-columns: 1fr !important; }
 }

@@ -9,52 +9,563 @@
   <link rel="icon" href="assets/logos/losango-play-icon.png">
 </head>
 <body>
-  <div id="root"></div>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<!-- ===================== NAV ===================== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="assets/logos/losango-play-full.png" alt="Losango Play">
+    </a>
+    <div class="nav-links">
+      <a href="#curso">O curso</a>
+      <a href="#como">Como funciona</a>
+      <a href="#rede">Rede Losango</a>
+      <a href="#duvidas">Dúvidas</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm">Entrar</button>
+      <button class="btn btn-primary btn-sm" onclick="openCheckout()">
+        Quero minha vaga <span class="chev">»</span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-  <script type="text/babel" src="js/Icons.jsx"></script>
-  <script type="text/babel" src="js/Nav.jsx"></script>
-  <script type="text/babel" src="js/CoursesBlock.jsx"></script>
-  <script type="text/babel" src="js/HowItWorks.jsx"></script>
-  <script type="text/babel" src="js/Numbers.jsx"></script>
-  <script type="text/babel" src="js/FAQ.jsx"></script>
-  <script type="text/babel" src="js/Checkout.jsx"></script>
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <img class="float-chev" src="assets/logos/play-chevron-outline.png" alt="">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">PAS UFLA 2026 · Matrículas abertas</span>
+      <h1>O preparatório da Rede Losango, <em>agora na sua tela.</em></h1>
+      <p class="hero-lead">Aulas ao vivo, professores de Minas, material digital. Tudo no losangoplay.com — sem baixar nada, sem sair de casa.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary btn-lg" onclick="openCheckout()">
+          Quero minha vaga <span class="chev">»</span>
+        </button>
+        <a href="#como" class="btn btn-ghost btn-lg">Como funciona</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-chip"><span class="dot">+</span>43 anos de tradição</div>
+        <div class="trust-chip"><span class="dot">+</span>600 aprovações em 2024</div>
+        <div class="trust-chip"><span class="dot">■</span>16 unidades em MG</div>
+        <div class="trust-chip"><span class="dot">●</span>Ao vivo + gravado</div>
+      </div>
+    </div>
+    <div class="hero-mock">
+      <div class="mock-frame">
+        <div class="mock-bar"><i></i><i></i><i></i></div>
+        <div class="mock-screen">
+          <div class="mock-live">
+            <div class="live"><span class="d"></span>AO VIVO · Matemática</div>
+            <div class="mock-live-count">43 alunos na sala</div>
+          </div>
+          <div class="mock-video"><div class="play-btn"></div></div>
+          <div class="mock-meta">
+            <span>Prof. Marcos · Geometria analítica</span>
+            <span>19:20 / 22:00</span>
+          </div>
+          <div class="mock-chat">
+            <div class="avatar"></div>
+            <div><b>Júlia</b><span>Professor, pode repetir o exemplo da parábola?</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script type="text/babel">
-    function App() {
-      const [checkout, setCheckout] = React.useState({ open: false, course: null });
+<!-- ===================== APRESENTAÇÃO ===================== -->
+<section class="section" id="apresentacao">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Feito pela Rede Losango</span>
+      <h2>Pensado para quem estuda de casa.</h2>
+      <p>Losango Play é o braço online da Rede Losango, a maior rede de ensino de Minas Gerais. A gente traz para a plataforma o mesmo método que, há mais de quatro décadas, vem aprovando estudantes nas principais universidades do país.</p>
+      <p class="sec-head-sub">A diferença? Agora você acompanha as aulas do seu quarto, da sala, da van da escola — de onde quiser. O rigor de quem conhece o vestibular, com a liberdade de quem estuda online.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3>Tradição em sala de aula</h3>
+        <p>Mais de 40 anos formando aprovados em Minas — o mesmo método, agora online.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Método que funciona</h3>
+        <p>O mesmo que está nas 16 unidades físicas da rede, com material Bernoulli incluso.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <h3>Liberdade do online</h3>
+        <p>Sem deslocamento, sem app para baixar, sem complicação. Só o navegador.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      React.useEffect(() => {
-        window.openCheckout = (course) => setCheckout({ open: true, course: course || null });
-      }, []);
+<!-- ===================== CURSOS ===================== -->
+<section class="section bg-paper2" id="curso">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O curso aberto agora</span>
+      <h2>PAS UFLA 2026 — matrículas abertas</h2>
+      <p>Um preparatório completo para quem está no 1º ou no 2º ano do Ensino Médio e vai prestar o Programa de Avaliação Seriada da Universidade Federal de Lavras. Aulas ao vivo, professores da Rede Losango e material didático digital pensado sob medida para a prova.</p>
+    </div>
+    <div class="courses">
+      <!-- PAS 1 -->
+      <div class="course">
+        <div class="course-tag">● PAS 1 · 1º ano do Ensino Médio</div>
+        <h3>PAS UFLA 2026<br><span style="color:var(--brand-orange)">Turma PAS 1</span></h3>
+        <p class="desc">Aulas ao vivo de segunda a sexta, gravações liberadas até o final do curso, e todo o material digital da Rede Losango incluso.</p>
+        <ul>
+          <li>Aulas ao vivo + gravação da aula no mesmo dia</li>
+          <li>Material didático digital (Bernoulli) incluso</li>
+          <li>Acesso até 12 de junho de 2026</li>
+          <li>Suporte por WhatsApp com a secretaria</li>
+        </ul>
+        <div class="price">
+          <span class="val">R$ [—]</span>
+          <span class="suffix">/ matrícula única · até 12x no cartão</span>
+        </div>
+        <button class="btn btn-primary" onclick="openCheckout('PAS 1')">
+          Quero minha vaga <span class="chev">»</span>
+        </button>
+        <p class="footnote">Inscrições até 26/04/2026 · Início das aulas: 27/04/2026</p>
+      </div>
+      <!-- PAS 2 -->
+      <div class="course featured">
+        <div class="course-tag">● PAS 2 · 2º ano do Ensino Médio · mais procurado</div>
+        <h3>PAS UFLA 2026<br><span style="color:#F78253">Turma PAS 2</span></h3>
+        <p class="desc">Aulas ao vivo de segunda a sexta, gravações liberadas até o final do curso, e todo o material digital da Rede Losango incluso.</p>
+        <ul>
+          <li>Aulas ao vivo + gravação da aula no mesmo dia</li>
+          <li>Material didático digital (Bernoulli) incluso</li>
+          <li>Acesso até 12 de junho de 2026</li>
+          <li>Suporte por WhatsApp com a secretaria</li>
+        </ul>
+        <div class="price">
+          <span class="val">R$ [—]</span>
+          <span class="suffix">/ matrícula única · até 12x no cartão</span>
+        </div>
+        <button class="btn btn-primary" onclick="openCheckout('PAS 2')">
+          Quero minha vaga <span class="chev">»</span>
+        </button>
+        <p class="footnote">Inscrições até 26/04/2026 · Início das aulas: 27/04/2026</p>
+      </div>
+    </div>
+    <p class="courses-note">
+      Cada aluno se inscreve em uma única turma — PAS 1 ou PAS 2 — conforme o ano escolar em que está matriculado. Em caso de dúvida sobre qual turma escolher, fala com a gente pelo WhatsApp.
+    </p>
+  </div>
+</section>
 
-      return (
-        <>
-          <Nav/>
-          <Hero/>
-          <Pillars/>
-          <CoursesBlock/>
-          <HowItWorks/>
-          <Benefits/>
-          <Numbers/>
-          <ForWhom/>
-          <Testimonials/>
-          <FAQ/>
-          <FinalCTA/>
-          <Footer/>
-          <Checkout
-            open={checkout.open}
-            course={checkout.course}
-            onClose={() => setCheckout({ open: false, course: null })}
-          />
-        </>
-      );
-    }
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section class="section" id="como">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Tudo dentro da sua área do aluno.</h2>
+      <p>Sem baixar aplicativo, sem conta em três lugares diferentes. Do primeiro clique ao dia da prova, você fica em um lugar só.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Você se matricula online</h4>
+        <p>Escolhe entre PAS 1 ou PAS 2, finaliza o pagamento e recebe os acessos por e-mail e WhatsApp em até 15 minutos.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Entra na aula ao vivo</h4>
+        <p>No horário marcado, o botão da aula do dia aparece na sua área. Um clique e você está na sala junto do professor e da turma.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Revisa quando precisar</h4>
+        <p>Cada aula é gravada automaticamente. Se você faltou ou quer rever um tópico, abre a gravação no painel.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Estuda com o material digital</h4>
+        <p>Todo o material do curso fica na plataforma. Baixe em PDF, imprima, destaque — como funciona para você.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-  </script>
+<!-- ===================== DIFERENCIAIS ===================== -->
+<section class="section bg-paper2">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Diferenciais</span>
+      <h2>Tradição de rede grande. Praticidade de curso online.</h2>
+      <p>O melhor da Rede Losango, reunido em uma plataforma só.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4z"/></svg>
+        </div>
+        <h4>Aulas ao vivo todo dia</h4>
+        <p>Segunda a sexta, entre o fim da tarde e o início da noite. Câmera, chat e microfone abertos.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <h4>100% das aulas gravadas</h4>
+        <p>Faltou? Chegou atrasado? Quer rever na véspera da prova? A gravação fica liberada.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        </div>
+        <h4>Material Bernoulli incluso</h4>
+        <p>Um dos sistemas mais premiados do Brasil, já dentro da plataforma — pode baixar em PDF.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>Professores de Minas</h4>
+        <p>Os mesmos professores que formam aprovados nas 16 unidades físicas da Rede.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.48-1.48A12 12 0 1 0 20.52 3.48z"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h4>Secretaria no WhatsApp</h4>
+        <p>Dúvida de matrícula, troca de turma, problema técnico — resposta de humano, de segunda a sexta.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>7 dias para desistir</h4>
+        <p>Você tem até 7 dias após a matrícula para pedir reembolso integral, conforme o CDC.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NÚMEROS ===================== -->
+<section class="numbers-block" id="rede">
+  <div class="container">
+    <div class="numbers-head">
+      <span class="eyebrow" style="color:#F78253;background:rgba(240,90,40,.15)">Quem está por trás</span>
+      <h2>A Rede Losango em números.</h2>
+      <p>O Losango Play é um produto novo. A escola que está por trás dele, não.</p>
+    </div>
+    <div class="numbers">
+      <div class="num">
+        <div class="v" data-count="43" data-prefix="+">0</div>
+        <div class="l">anos de história em sala de aula</div>
+      </div>
+      <div class="num">
+        <div class="v" data-count="16">0</div>
+        <div class="l">unidades físicas em Minas Gerais</div>
+      </div>
+      <div class="num">
+        <div class="v" data-count="600" data-prefix="+">0</div>
+        <div class="l">aprovações em 2024</div>
+      </div>
+      <div class="num">
+        <div class="v" data-count="350" data-prefix="+">0</div>
+        <div class="l">aprovações em federais</div>
+      </div>
+      <div class="num">
+        <div class="v" data-count="100" data-prefix="+">0</div>
+        <div class="l">aprovações em Medicina</div>
+      </div>
+    </div>
+    <p class="quote-block">O método que está mudando a educação em Minas Gerais agora é uma aba no seu navegador.</p>
+  </div>
+</section>
+
+<!-- ===================== PARA QUEM É ===================== -->
+<section class="section">
+  <div class="container forwhom-layout">
+    <div>
+      <span class="eyebrow">Para quem é</span>
+      <h2 class="forwhom-title">Este curso é para você que…</h2>
+      <p class="forwhom-lead">Se você se reconhece em um dos pontos ao lado, o PAS UFLA 2026 foi desenhado com você em mente.</p>
+    </div>
+    <div class="forwhom">
+      <div class="forwhom-item">
+        <div class="ic">»</div>
+        <p>Está no 1º ou 2º ano do Ensino Médio e vai prestar o PAS da UFLA.</p>
+      </div>
+      <div class="forwhom-item">
+        <div class="ic">»</div>
+        <p>Mora em uma cidade sem unidade da Rede Losango — ou mora perto, mas prefere estudar de casa.</p>
+      </div>
+      <div class="forwhom-item">
+        <div class="ic">»</div>
+        <p>Já é aluno de uma de nossas unidades e quer um reforço a mais, focado só no seriado.</p>
+      </div>
+      <div class="forwhom-item">
+        <div class="ic">»</div>
+        <p>Não quer depender de material de ENEM para se preparar para uma prova que cobra outras coisas.</p>
+      </div>
+      <div class="forwhom-item">
+        <div class="ic">»</div>
+        <p>Quer começar a sua preparação para a UFLA agora, sem pagar cursinho presencial no valor cheio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section class="section bg-paper2">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Prova social</span>
+      <h2>Quem já passou por aqui.</h2>
+      <p>Estudantes de Lavras, Varginha e região aprovados nas universidades federais mais cobiçadas do sul de Minas.</p>
+    </div>
+    <div class="testimonials">
+      <div class="testi">
+        <div class="testi-head">
+          <div class="avatar">MO</div>
+          <div>
+            <div class="testi-name">Mariana Oliveira</div>
+            <div class="testi-sub">Lavras · MG</div>
+          </div>
+        </div>
+        <blockquote>"Estudar pela Rede Losango foi o que me deu disciplina. O PAS é longo, mas a gente não se perde porque o cronograma já vem pronto."</blockquote>
+        <div class="univ-tag">UFLA — Medicina Veterinária</div>
+      </div>
+      <div class="testi">
+        <div class="testi-head">
+          <div class="avatar">PS</div>
+          <div>
+            <div class="testi-name">Pedro Henrique Silva</div>
+            <div class="testi-sub">Varginha · MG</div>
+          </div>
+        </div>
+        <blockquote>"Morava longe da unidade e não tinha como ir todo dia. Com o Play, eu assistia da minha casa e ainda revia as aulas no fim de semana."</blockquote>
+        <div class="univ-tag">UFLA — Engenharia de Alimentos</div>
+      </div>
+      <div class="testi">
+        <div class="testi-head">
+          <div class="avatar">CF</div>
+          <div>
+            <div class="testi-name">Clara Ferreira</div>
+            <div class="testi-sub">Viçosa · MG</div>
+          </div>
+        </div>
+        <blockquote>"O material do Bernoulli fez diferença na prova. Era o mesmo que meu primo usou na unidade de BH — e ele também passou."</blockquote>
+        <div class="univ-tag">UFV — Ciências Biológicas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="duvidas">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas mais feitas.</h2>
+      <p>Se a sua dúvida não está aqui, chama a gente no WhatsApp.</p>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>O curso é ao vivo ou gravado?<span class="chev">»</span></summary>
+        <div class="a">Os dois. As aulas acontecem ao vivo, de segunda a sexta, e ficam salvas na plataforma logo depois. Você assiste de novo quantas vezes quiser.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso baixar algum aplicativo?<span class="chev">»</span></summary>
+        <div class="a">Não. Tudo acontece dentro do losangoplay.com, direto do navegador. Funciona no computador, no celular e no tablet.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Tem material didático? Vou receber impresso?<span class="chev">»</span></summary>
+        <div class="a">O material é 100% digital e já está incluso na matrícula. Você acessa pela plataforma, baixa em PDF e, se preferir, imprime em casa.</div>
+      </details>
+      <details class="faq-item">
+        <summary>O PAS tem redação?<span class="chev">»</span></summary>
+        <div class="a">Não. Para os preparatórios de vestibulares seriados — PAS incluído — o foco é nas disciplinas do vestibular. Se você quer preparação em redação, fique de olho na gente: os cursos do segundo semestre (Pré-ENEM Intensivo, Reta Final ENEM 2026 e outros seriados) vão ter redação inclusa.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Posso comprar só algumas disciplinas?<span class="chev">»</span></summary>
+        <div class="a">No PAS, não. Como é um curso curto (menos de dois meses) e com valor acessível, a matrícula é sempre no pacote completo, com todas as disciplinas que caem na prova da UFLA.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Qual a diferença entre PAS 1 e PAS 2?<span class="chev">»</span></summary>
+        <div class="a">PAS 1 é a etapa para estudantes do 1º ano do Ensino Médio. PAS 2 é para quem está no 2º ano. O conteúdo cobrado pela UFLA muda em cada etapa, por isso as turmas são separadas.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Já sou aluno da Rede Losango. Tenho desconto?<span class="chev">»</span></summary>
+        <div class="a">Sim. Alunos matriculados em qualquer uma das 16 unidades físicas da Rede Losango têm condição especial no Losango Play. Fala com a secretaria da sua escola ou com a gente pelo WhatsApp que explicamos direitinho.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona o pagamento?<span class="chev">»</span></summary>
+        <div class="a">A matrícula é paga direto no site, via Mercado Pago. Você pode pagar no cartão de crédito, Pix ou boleto. Condições de parcelamento a confirmar com o financeiro da Rede Losango.</div>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu quiser cancelar?<span class="chev">»</span></summary>
+        <div class="a">Você tem até 7 dias após a matrícula para pedir o cancelamento e receber o valor de volta integralmente, conforme o Código de Defesa do Consumidor. Depois desse prazo, o cancelamento é analisado caso a caso.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Minha internet é instável. Consigo acompanhar?<span class="chev">»</span></summary>
+        <div class="a">As aulas ao vivo funcionam bem em conexões simples de banda larga ou 4G. Se a conexão travar em algum dia, a aula fica gravada na plataforma — você assiste depois, sem prejuízo.</div>
+      </details>
+      <details class="faq-item">
+        <summary>As aulas têm horário fixo?<span class="chev">»</span></summary>
+        <div class="a">Sim, o cronograma completo de horários vai para o seu e-mail assim que a matrícula é confirmada. Em geral, as aulas acontecem entre o fim da tarde e o início da noite, de segunda a sexta.</div>
+      </details>
+      <details class="faq-item">
+        <summary>O acesso à plataforma dura quanto tempo?<span class="chev">»</span></summary>
+        <div class="a">Você tem acesso a todas as aulas, gravações e materiais até o final do curso (12 de junho de 2026). Depois disso, o acesso às gravações permanece liberado por mais [X dias — a confirmar] para revisões de última hora antes da prova.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="final-cta" id="cta-final">
+  <div class="container" id="cta-content">
+    <span class="eyebrow" style="color:#fff;background:rgba(255,255,255,.18)">Antes que as aulas comecem</span>
+    <h2>A sua vaga fecha em…</h2>
+    <p>No dia 27/04/2026, às 19h, a primeira aula começa ao vivo. Depois disso, as inscrições do PAS UFLA 2026 fecham — a próxima turma só em 2027.</p>
+    <div class="countdown">
+      <div class="cd-cell"><div class="v" id="cd-d">00</div><div class="l">dias</div></div>
+      <div class="cd-cell"><div class="v" id="cd-h">00</div><div class="l">horas</div></div>
+      <div class="cd-cell"><div class="v" id="cd-m">00</div><div class="l">min</div></div>
+      <div class="cd-cell"><div class="v" id="cd-s">00</div><div class="l">seg</div></div>
+    </div>
+    <button class="btn btn-lg" style="background:#fff;color:#D94A1C;font-weight:800" onclick="openCheckout()">
+      Quero minha vaga <span class="chev">»</span>
+    </button>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logos/losango-play-full-white.png" alt="Losango Play">
+        <p>O braço online da Rede Losango — a maior rede de ensino de Minas Gerais. Preparatórios para vestibulares seriados, 100% pelo navegador.</p>
+      </div>
+      <div>
+        <h5>Losango Play</h5>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#curso">O curso PAS</a></li>
+          <li><a href="#como">Como funciona</a></li>
+          <li><a href="#duvidas">Perguntas frequentes</a></li>
+          <li><a href="#">Entrar na plataforma</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rede Losango</h5>
+        <ul>
+          <li><a href="#">A maior rede de ensino de Minas</a></li>
+          <li><a href="#">Conheça as 16 unidades</a></li>
+          <li><a href="#">Histórico de aprovações</a></li>
+          <li><a href="https://redelosango.com" target="_blank" rel="noopener">redelosango.com »</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Fale com a gente</h5>
+        <ul>
+          <li>WhatsApp: [inserir]</li>
+          <li>contato@losangoplay.com</li>
+          <li>Seg a sex · 8h às 18h</li>
+        </ul>
+        <h5 style="margin-top:24px">Legal</h5>
+        <ul>
+          <li><a href="#">Termos de uso</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">LGPD — Encarregado de dados</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Losango Play · Uma iniciativa da Rede Losango · CNPJ [inserir]</div>
+      <div>Todos os direitos reservados.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MODAL CHECKOUT ===================== -->
+<div class="modal" id="modal-checkout" onclick="handleModalClick(event)">
+  <div class="modal-inner" id="modal-inner">
+    <button class="checkout-close" onclick="closeCheckout()">×</button>
+
+    <!-- Estado: formulário -->
+    <div id="checkout-form-wrap">
+      <div class="checkout-form">
+        <span class="eyebrow">Só mais um passo</span>
+        <h3>Preencha rapidinho para garantir sua vaga.</h3>
+        <p class="sub">Em até 15 minutos após o pagamento, você recebe no WhatsApp e no e-mail o link da sua primeira aula.</p>
+        <div class="field">
+          <label for="f-nome">Nome completo do aluno</label>
+          <input id="f-nome" type="text" placeholder="Como aparece no RG">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-whats">WhatsApp (com DDD)</label>
+            <input id="f-whats" type="tel" placeholder="(35) 9 ____-____">
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" type="email" placeholder="voce@email.com">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-cpf">CPF do aluno</label>
+            <input id="f-cpf" type="text" placeholder="000.000.000-00">
+          </div>
+          <div class="field">
+            <label for="f-turma">Turma</label>
+            <select id="f-turma">
+              <option value="PAS 1">PAS 1 · 1º ano EM</option>
+              <option value="PAS 2">PAS 2 · 2º ano EM</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg" style="margin-top:12px" onclick="submitCheckout()">
+          Ir para o pagamento <span class="chev">»</span>
+        </button>
+        <p class="checkout-legal">Pagamento processado pelo Mercado Pago. Cartão, Pix ou boleto.</p>
+      </div>
+      <div class="checkout-side">
+        <span class="eyebrow">Resumo do pedido</span>
+        <div class="order-box">
+          <div class="order-title" id="order-title">PAS UFLA 2026 · Turma PAS 1</div>
+          <div class="order-desc">Aulas ao vivo + gravações + material digital Bernoulli, até 12/06/2026.</div>
+          <hr class="order-hr">
+          <div class="order-row"><span>Matrícula</span><span>R$ [—]</span></div>
+          <div class="order-row order-discount"><span>Desconto primeira turma</span><span>−R$ [—]</span></div>
+          <div class="order-row order-total"><span>Total</span><span>R$ [—]</span></div>
+        </div>
+        <div class="checkout-note"><span>●</span><span>Até 12x no cartão. Pix à vista com desconto. Boleto em até 3 dias.</span></div>
+        <div class="checkout-note"><span>●</span><span>7 dias para cancelar e receber reembolso integral, pelo CDC.</span></div>
+      </div>
+    </div>
+
+    <!-- Estado: sucesso -->
+    <div id="checkout-success-wrap" style="display:none">
+      <div class="checkout-success">
+        <div class="success-icon">✓</div>
+        <h3>Sua vaga está garantida.</h3>
+        <p>Em até 15 minutos você recebe no WhatsApp e no e-mail o link da sua área do aluno e o cronograma da primeira semana.</p>
+        <button class="btn btn-primary btn-lg" onclick="closeCheckout()">Fechar <span class="chev">»</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
