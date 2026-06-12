@@ -1,0 +1,66 @@
+name: Deploy to S3 + CloudFront
+
+# Publica o site estático no S3 e invalida o cache do CloudFront
+# a cada push na branch main. Também pode ser disparado manualmente.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Evita deploys concorrentes pisando uns nos outros.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: us-east-1
+      S3_BUCKET: losango-prod-site
+      CLOUDFRONT_DISTRIBUTION_ID: E3QCKZ24HXPM72
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # 1) Sync dos assets com hash/imutáveis primeiro, com cache longo.
+      #    css, js, fonts, imagens e ícones podem ser cacheados agressivamente.
+      - name: Sync static assets (long cache)
+        run: |
+          aws s3 sync . "s3://${S3_BUCKET}" \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".gitignore" \
+            --exclude ".claude/*" \
+            --exclude ".DS_Store" \
+            --exclude "*.html" \
+            --cache-control "public, max-age=31536000, immutable"
+
+      # 2) Sync dos HTML por último, com cache curto (sempre revalida).
+      #    Garante que o conteúdo novo apareça assim que o cache do CDN expira.
+      - name: Sync HTML (short cache)
+        run: |
+          aws s3 sync . "s3://${S3_BUCKET}" \
+            --exclude "*" \
+            --include "*.html" \
+            --cache-control "public, max-age=0, must-revalidate" \
+            --content-type "text/html; charset=utf-8"
+
+      # 3) Invalida o cache do CloudFront para servir a versão nova.
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
+            --paths "/*"
