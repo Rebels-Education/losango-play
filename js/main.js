@@ -6,7 +6,7 @@ function openCheckout(course) {
 
   if (course && select) {
     select.value = course;
-    if (title) title.textContent = 'PAS UFLA 2026 · Turma ' + course;
+    if (title) title.textContent = course;
   }
 
   document.getElementById('checkout-form-wrap').style.display = '';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var title  = document.getElementById('order-title');
   if (select && title) {
     select.addEventListener('change', function () {
-      title.textContent = 'PAS UFLA 2026 · Turma ' + this.value;
+      title.textContent = this.value;
     });
   }
 });
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* === COUNTDOWN === */
 (function () {
-  var target = new Date('2026-04-27T19:00:00-03:00').getTime();
+  var target = new Date('2026-08-10T19:00:00-03:00').getTime();
 
   var dEl = document.getElementById('cd-d');
   var hEl = document.getElementById('cd-h');
@@ -92,10 +92,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (wrap) {
         wrap.innerHTML = [
           '<span class="eyebrow" style="color:#fff;background:rgba(255,255,255,.18)">As aulas já começaram</span>',
-          '<h2>Próxima turma: PAS 2027</h2>',
-          '<p>As inscrições para o PAS UFLA 2026 estão encerradas. Entre na lista de espera e seja o primeiro a saber quando as matrículas do PAS 2027 abrirem.</p>',
-          '<button class="btn btn-lg" style="background:#fff;color:#D94A1C;font-weight:800">',
-          '  Entrar na lista de espera <span class="chev">»</span>',
+          '<h2>Ainda dá tempo de entrar!</h2>',
+          '<p>O Pré-Vestibular Intensivo de Agosto já começou, mas as matrículas seguem abertas. Entre agora e acesse todas as gravações das aulas já realizadas.</p>',
+          '<button class="btn btn-lg" style="background:#fff;color:#D94A1C;font-weight:800" onclick="openCheckout()">',
+          '  Quero minha vaga <span class="chev">»</span>',
           '</button>',
         ].join('');
       }
