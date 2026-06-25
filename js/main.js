@@ -94,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
           '<span class="eyebrow" style="color:#fff;background:rgba(255,255,255,.18)">As aulas já começaram</span>',
           '<h2>Ainda dá tempo de entrar!</h2>',
           '<p>O Pré-Vestibular Intensivo de Agosto já começou, mas as matrículas seguem abertas. Entre agora e acesse todas as gravações das aulas já realizadas.</p>',
-          '<button class="btn btn-lg" style="background:#fff;color:#D94A1C;font-weight:800" onclick="openCheckout()">',
+          '<a class="btn btn-lg" style="background:#fff;color:#D94A1C;font-weight:800" href="https://payments.losangoplay.com.br/auth?product=curso-completo-losango" target="_blank" rel="noopener">',
           '  Quero minha vaga <span class="chev">»</span>',
-          '</button>',
+          '</a>',
         ].join('');
       }
       return;
