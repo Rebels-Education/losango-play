@@ -236,7 +236,7 @@ a { color: inherit; }
   .nav { top: 8px; padding: 0 12px; }
   .nav-inner { flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 20px; }
   .nav-brand { justify-content: center; }
-  .nav-brand img { height: 44px; }
+  .nav-brand img { height: 66px; }
   .nav-actions { width: 100%; justify-content: center; }
 }
 
