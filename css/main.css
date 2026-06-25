@@ -481,6 +481,8 @@ a { color: inherit; }
 .cfb-plan-price { font-family: var(--font-compressed); font-size: 40px; font-weight: 900; color: #fff; letter-spacing: -.02em; margin: 4px 0; line-height: 1; }
 .cfb-btn-ghost { background: rgba(255,255,255,.1) !important; color: #fff !important; border-color: rgba(255,255,255,.25) !important; margin-top: auto; }
 .cfb-btn-ghost:hover { background: rgba(255,255,255,.18) !important; }
+.cfb-area-row-stack { flex-direction: column; align-items: flex-start; gap: 10px; }
+.cfb-area-btn { width: 100%; }
 .cfb-plan-divider { border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 4px 0; }
 .cfb-plan-upsell { background: rgba(0,0,0,.15); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
 .cfb-plan-upsell-label { font-size: 13px; font-weight: 800; color: #fff; }
