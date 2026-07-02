@@ -533,6 +533,11 @@ a { color: inherit; }
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+@media (max-width: 1100px) {
+  .course-featured-block { padding: 28px 24px; }
+  .cfb-pricing { grid-template-columns: 1fr 1fr; }
+  .cfb-pricing .cfb-plan:last-child { grid-column: 1 / -1; }
+}
 @media (max-width: 860px) {
   .hero-grid, .courses, .steps, .benefits, .numbers, .testimonials, .footer-grid, .modal-inner { grid-template-columns: 1fr; }
   .pillars, .forwhom-layout { grid-template-columns: 1fr; }
@@ -540,6 +545,7 @@ a { color: inherit; }
   .section { padding: 64px 0; }
   .hero { padding: 80px 0; }
   .cfb-pricing { grid-template-columns: 1fr; }
+  .cfb-pricing .cfb-plan:last-child { grid-column: auto; }
   .course-featured-block { padding: 24px; }
   .material-options { flex-direction: column; gap: 10px; }
   .mat-opt-sep { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.18); padding-top: 10px; }
