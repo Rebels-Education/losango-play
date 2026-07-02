@@ -7,6 +7,7 @@
   <meta name="description" content="Prepare-se para o ENEM com o Pré-Vestibular Intensivo da Rede Losango. Aulas ao vivo de 10/08 a 23/10/2026, professores de Minas, Coleção Platão. Tudo no losangoplay.com.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="assets/logos/losango-play-icon.png">
+  <link rel="preload" as="image" href="assets/professores/luciano-albuquerque.webp" type="image/webp">
 </head>
 <body>
 
@@ -61,7 +62,10 @@
             <div class="mock-live-count">43 alunos na sala</div>
           </div>
           <div class="mock-video">
-            <img src="assets/professores/luciano-albuquerque.jpg" alt="Prof. Luciano · Matemática ao vivo">
+            <picture>
+              <source srcset="assets/professores/luciano-albuquerque.webp" type="image/webp">
+              <img src="assets/professores/luciano-albuquerque.jpg" alt="Prof. Luciano · Matemática ao vivo" fetchpriority="high" loading="eager">
+            </picture>
             <div class="play-btn"></div>
           </div>
           <div class="mock-meta">
