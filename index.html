@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" href="fonts/helvetica-rounded-bold-5871d05ead8de.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="fonts/Helvetica.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/logos/losango-play-full.webp" type="image/webp">
   <link rel="preload" as="image" href="assets/professores/luciano-albuquerque.webp" type="image/webp">
   <link rel="stylesheet" href="css/main.css">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&display=swap" onload="this.rel='stylesheet'">
@@ -21,7 +21,10 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-brand">
-      <img src="assets/logos/losango-play-full.png" alt="Losango Play">
+      <picture>
+        <source srcset="assets/logos/losango-play-full.webp" type="image/webp">
+        <img src="assets/logos/losango-play-full.png" alt="Losango Play" fetchpriority="high">
+      </picture>
     </a>
     <div class="nav-links">
       <a href="#curso">Os cursos</a>
@@ -40,7 +43,10 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <img class="float-chev" src="assets/logos/play-chevron-outline.png" alt="">
+  <picture>
+    <source srcset="assets/logos/play-chevron-outline.webp" type="image/webp">
+    <img class="float-chev" src="assets/logos/play-chevron-outline.png" alt="" loading="lazy">
+  </picture>
   <div class="container hero-grid">
     <div>
       <span class="eyebrow">Pré-Vestibular Intensivo · Matrículas abertas</span>
@@ -333,7 +339,7 @@
       <!-- Talita Vasconcelos -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/talita-vasconcelos.jpg" alt="Prof.ª Talita Vasconcelos">
+          <img loading="lazy" src="assets/professores/talita-vasconcelos.jpg" alt="Prof.ª Talita Vasconcelos">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Talita Vasconcelos</p>
@@ -345,7 +351,7 @@
       <!-- Marquinhos -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/marquinhos-redacao.jpg" alt="Prof. Marquinhos">
+          <img loading="lazy" src="assets/professores/marquinhos-redacao.jpg" alt="Prof. Marquinhos">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Marquinhos</p>
@@ -357,7 +363,7 @@
       <!-- Matheus Rozental -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/matheus-rozental.jpg" alt="Prof. Matheus Rozental">
+          <img loading="lazy" src="assets/professores/matheus-rozental.jpg" alt="Prof. Matheus Rozental">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Matheus Rozental</p>
@@ -369,7 +375,7 @@
       <!-- Luciano Albuquerque -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/luciano-albuquerque.jpg" alt="Prof. Luciano Albuquerque">
+          <img loading="lazy" src="assets/professores/luciano-albuquerque.jpg" alt="Prof. Luciano Albuquerque">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Luciano Albuquerque</p>
@@ -381,7 +387,7 @@
       <!-- Cleuder Augusto Braga -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/cleuder-braga.jpg" alt="Prof. Cleuder Augusto Braga">
+          <img loading="lazy" src="assets/professores/cleuder-braga.jpg" alt="Prof. Cleuder Augusto Braga">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Cleuder Augusto Braga</p>
@@ -393,7 +399,7 @@
       <!-- Marcos Marcão -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/marcos-marcao.jpg" alt="Prof. Marcão">
+          <img loading="lazy" src="assets/professores/marcos-marcao.jpg" alt="Prof. Marcão">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Marcão</p>
@@ -405,7 +411,7 @@
       <!-- Fernanda Zuquim -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/fernanda-zuquim.jpg" alt="Prof.ª Fernanda Alves Zuquim">
+          <img loading="lazy" src="assets/professores/fernanda-zuquim.jpg" alt="Prof.ª Fernanda Alves Zuquim">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Fernanda Alves Zuquim</p>
@@ -417,7 +423,7 @@
       <!-- Raísa -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/raisa-rodarte.jpg" alt="Prof. Raísa Rodarte">
+          <img loading="lazy" src="assets/professores/raisa-rodarte.jpg" alt="Prof. Raísa Rodarte">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Raísa Rodarte</p>
@@ -429,7 +435,7 @@
       <!-- Pedro -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/pedro.jpg" alt="Prof. Pedro">
+          <img loading="lazy" src="assets/professores/pedro.jpg" alt="Prof. Pedro">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Pedro</p>
@@ -441,7 +447,7 @@
       <!-- Fernando Fraga -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/fernando-fraga.jpg" alt="Prof. Fernando Fraga">
+          <img loading="lazy" src="assets/professores/fernando-fraga.jpg" alt="Prof. Fernando Fraga">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Fernando Fraga</p>
@@ -453,7 +459,7 @@
       <!-- Patrick Souza -->
       <div class="teacher-card">
         <div class="teacher-photo">
-          <img src="assets/professores/patrick-souza.jpg" alt="Prof. Patrick Souza">
+          <img loading="lazy" src="assets/professores/patrick-souza.jpg" alt="Prof. Patrick Souza">
         </div>
         <div class="teacher-info">
           <p class="teacher-name">Patrick Souza</p>
@@ -711,7 +717,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="assets/logos/losango-play-full-white.png" alt="Losango Play">
+        <picture>
+          <source srcset="assets/logos/losango-play-full-white.webp" type="image/webp">
+          <img src="assets/logos/losango-play-full-white.png" alt="Losango Play" loading="lazy">
+        </picture>
         <p>O braço on-line da Rede Losango, a maior Rede de Ensino de Minas Gerais. Preparatório para o ENEM 2026 e vestibulares, 100% pelo navegador.</p>
       </div>
       <div>
