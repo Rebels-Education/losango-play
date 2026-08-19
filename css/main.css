@@ -336,6 +336,9 @@ a { color: inherit; }
 .course .footnote { font-size: 12px; color: var(--ink-500); margin: 0; }
 .course.featured .footnote { color: rgba(255,255,255,.55); }
 
+.course-sales-note { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 800; color: var(--brand-orange-700); background: var(--brand-orange-50); padding: 9px 12px; border-radius: 10px; margin: 0; }
+.course.course-anniversary .course-sales-note { color: #8A5A00; background: #FBE7B4; }
+
 /* Course anniversary highlight (e.g. UFV 100 anos) */
 .course.course-anniversary { background: linear-gradient(160deg, #FFF7E6 0%, #FFFFFF 55%); border-color: #E9B949; box-shadow: 0 10px 26px rgba(199,146,23,.18); }
 .course-tag-anniversary { background: #FBE7B4; color: #8A5A00; }
