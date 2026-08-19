@@ -276,6 +276,17 @@ a { color: inherit; }
 .float-chev { position: absolute; right: -30px; top: 30px; width: 80px; opacity: .45; transform: rotate(12deg); }
 .float-losango { position: absolute; left: -40px; bottom: 40px; width: 100px; opacity: .35; }
 
+/* Hero course preview grid */
+.hero-courses { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hero-course-card { display: flex; flex-direction: column; gap: 6px; padding: 20px; background: #fff; border: 1px solid var(--border-2); border-radius: 18px; box-shadow: var(--shadow-sm); text-decoration: none; transition: all .2s var(--ease-out); }
+.hero-course-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.hero-course-tag { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--brand-orange-600); }
+.hero-course-name { font-family: var(--font-display); font-size: 18px; font-weight: 900; color: var(--ink-900); line-height: 1.2; }
+.hero-course-price { font-family: var(--font-compressed); font-size: 22px; font-weight: 900; color: var(--ink-900); display: flex; align-items: baseline; gap: 6px; }
+.hero-course-price small { font-family: var(--font-body); font-size: 11px; font-weight: 600; color: var(--ink-500); }
+.hero-course-card-anniversary { background: linear-gradient(160deg, #FFF7E6 0%, #FFFFFF 65%); border-color: #E9B949; }
+.hero-course-card-anniversary .hero-course-tag { color: #8A5A00; }
+
 /* =========================================================
    PILLARS
    ========================================================= */
@@ -317,6 +328,11 @@ a { color: inherit; }
 .course.featured .suffix { color: rgba(255,255,255,.55); }
 .course .footnote { font-size: 12px; color: var(--ink-500); margin: 0; }
 .course.featured .footnote { color: rgba(255,255,255,.55); }
+
+/* Course anniversary highlight (e.g. UFV 100 anos) */
+.course.course-anniversary { background: linear-gradient(160deg, #FFF7E6 0%, #FFFFFF 55%); border-color: #E9B949; box-shadow: 0 10px 26px rgba(199,146,23,.18); }
+.course-tag-anniversary { background: #FBE7B4; color: #8A5A00; }
+.course-quote { font-family: var(--font-editorial); font-style: italic; font-weight: 600; color: #8A5A00; font-size: 16px; line-height: 1.4; margin: 0; }
 
 /* =========================================================
    STEPS
@@ -401,14 +417,19 @@ a { color: inherit; }
    FOOTER
    ========================================================= */
 .footer { background: var(--brand-navy); color: rgba(255,255,255,.72); padding: 72px 0 28px; }
-.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 32px; }
 .footer h5 { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin: 0 0 18px; }
 .footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 14px; }
 .footer a { color: rgba(255,255,255,.72); text-decoration: none; }
 .footer a:hover { color: #fff; }
 .footer-brand img { height: 84px; }
 .footer-brand p { font-size: 14px; line-height: 1.55; margin: 16px 0 0; max-width: 280px; color: rgba(255,255,255,.6); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,.55); flex-wrap: wrap; gap: 12px; }
+.footer-note { font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.5); max-width: 760px; margin: 48px 0 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 24px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,.55); flex-wrap: wrap; gap: 12px; }
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
 
 /* =========================================================
    CHECKOUT MODAL
@@ -548,6 +569,9 @@ a { color: inherit; }
   .course-featured-block { padding: 24px; }
   .material-options { flex-direction: column; gap: 10px; }
   .mat-opt-sep { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.18); padding-top: 10px; }
+}
+@media (max-width: 480px) {
+  .hero-courses { grid-template-columns: 1fr; }
 }
 
 /* =========================================================
