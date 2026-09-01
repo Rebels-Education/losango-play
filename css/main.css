@@ -278,7 +278,6 @@ a { color: inherit; }
 
 /* Hero course preview grid */
 .hero-courses { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.hero-courses .hero-course-card:last-child { grid-column: 1 / -1; }
 .hero-course-card { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 34px 28px 36px; background: #fff; border: 1px solid var(--border-2); border-top: 5px solid var(--brand-orange); border-radius: 20px; box-shadow: var(--shadow-md); text-decoration: none; transition: all .22s var(--ease-out); overflow: hidden; min-height: 250px; }
 .hero-course-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(240,90,40,.08), transparent 55%); pointer-events: none; }
 .hero-course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--brand-orange-200); }
@@ -316,7 +315,7 @@ a { color: inherit; }
 /* =========================================================
    COURSE CARDS
    ========================================================= */
-.courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.courses { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .course { background: #fff; border-radius: 24px; padding: 36px; box-shadow: var(--shadow-md); border: 1px solid var(--border-2); display: flex; flex-direction: column; gap: 18px; position: relative; overflow: hidden; transition: all .25s var(--ease-out); }
 .course:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .course.featured { background: var(--brand-navy); color: #fff; border-color: transparent; }
@@ -344,6 +343,19 @@ a { color: inherit; }
 .course.course-anniversary { background: linear-gradient(160deg, #FFF7E6 0%, #FFFFFF 55%); border-color: #E9B949; box-shadow: 0 10px 26px rgba(199,146,23,.18); }
 .course-tag-anniversary { background: #FBE7B4; color: #8A5A00; }
 .course-quote { font-family: var(--font-editorial); font-style: italic; font-weight: 600; color: #8A5A00; font-size: 16px; line-height: 1.4; margin: 0; }
+
+/* Two-option pricing (e.g. Pré-PASES: PDF vs. material físico) */
+.price-options { display: flex; gap: 20px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+.price-option { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1 1 160px; }
+.price-option-val { font-family: var(--font-compressed); font-size: 32px; font-weight: 900; color: var(--brand-orange); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.price-option-alt .price-option-val { color: #8A5A00; }
+.price-option-label { font-size: 12.5px; color: var(--ink-500); line-height: 1.35; margin-bottom: 8px; }
+.price-option .btn { width: 100%; text-align: center; justify-content: center; }
+
+/* Link from a course card to the schedule section */
+.course-schedule-link { margin: -8px 0 0; font-size: 13px; }
+.course-schedule-link a { color: var(--ink-500); font-weight: 700; text-decoration: none; }
+.course-schedule-link a:hover { color: var(--brand-orange); text-decoration: underline; }
 
 /* =========================================================
    STEPS
@@ -558,6 +570,22 @@ a { color: inherit; }
 .course-presencial-obs { font-size: 12.5px; color: var(--ink-500); margin: 0; line-height: 1.5; }
 
 /* =========================================================
+   SCHEDULE TABLES
+   ========================================================= */
+.schedule-block { margin-bottom: 32px; }
+.schedule-block:last-child { margin-bottom: 0; }
+.schedule-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--ink-900); margin: 0 0 14px; }
+.schedule-table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border-2); background: #fff; }
+.schedule-table { width: 100%; border-collapse: collapse; font-size: 13.5px; white-space: nowrap; }
+.schedule-table th, .schedule-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-2); }
+.schedule-table tr:last-child td { border-bottom: 0; }
+.schedule-table th { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-500); background: var(--bg-2); }
+.schedule-table td:first-child { font-weight: 800; color: var(--ink-900); font-variant-numeric: tabular-nums; }
+.schedule-table .schedule-break { text-align: center; font-style: italic; color: var(--ink-500); background: var(--bg-2); }
+.schedule-table-compact { max-width: 360px; }
+.schedule-note { font-size: 13.5px; color: var(--ink-500); line-height: 1.55; margin: 12px 0 0; }
+
+/* =========================================================
    TEACHER CARDS
    ========================================================= */
 .teachers { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
@@ -579,8 +607,6 @@ a { color: inherit; }
   .course-featured-block { padding: 28px 24px; }
   .cfb-pricing { grid-template-columns: 1fr 1fr; }
   .cfb-pricing .cfb-plan:last-child { grid-column: 1 / -1; }
-  .courses { grid-template-columns: 1fr 1fr; }
-  .courses .course:last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 860px) {
   .hero-grid, .courses, .steps, .benefits, .numbers, .testimonials, .footer-grid, .modal-inner { grid-template-columns: 1fr; }
@@ -590,7 +616,6 @@ a { color: inherit; }
   .hero { padding: 80px 0; }
   .cfb-pricing { grid-template-columns: 1fr; }
   .cfb-pricing .cfb-plan:last-child { grid-column: auto; }
-  .courses .course:last-child { grid-column: auto; }
   .course-featured-block { padding: 24px; }
   .material-options { flex-direction: column; gap: 10px; }
   .mat-opt-sep { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.18); padding-top: 10px; }
