@@ -243,6 +243,7 @@ a { color: inherit; }
    ========================================================= */
 .hero { padding: 120px 0 100px; background: linear-gradient(180deg, #FEF3EB 0%, #FFFFFF 100%); position: relative; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: start; }
+.hero-solo { max-width: 760px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-orange); padding: 8px 14px; border-radius: 9999px; background: var(--brand-orange-50); width: fit-content; }
 .hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -.02em; font-weight: 900; margin: 18px 0 18px; color: var(--ink-900); text-wrap: balance; }
 .hero h1 em { color: var(--brand-orange); font-style: normal; }
@@ -329,7 +330,7 @@ a { color: inherit; }
 .course.featured ul { color: rgba(255,255,255,.85); }
 .course li { display: flex; gap: 10px; align-items: flex-start; }
 .course li::before { content: ""; width: 18px; height: 18px; flex: 0 0 18px; background: var(--brand-orange); border-radius: 9999px; margin-top: 2px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><path d='m5 12 5 5L20 7'/></svg>"); background-size: 14px; background-position: center; background-repeat: no-repeat; }
-.course .price { display: flex; align-items: baseline; gap: 8px; margin-top: auto; padding-top: 8px; }
+.course .price { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
 .course .val { font-family: var(--font-compressed); font-size: 42px; font-weight: 900; color: var(--brand-orange); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .course .suffix { font-size: 14px; color: var(--ink-500); }
 .course.featured .suffix { color: rgba(255,255,255,.55); }
@@ -345,7 +346,7 @@ a { color: inherit; }
 .course-quote { font-family: var(--font-editorial); font-style: italic; font-weight: 600; color: #8A5A00; font-size: 16px; line-height: 1.4; margin: 0; }
 
 /* Two-option pricing (e.g. Pré-PASES: PDF vs. material físico) */
-.price-options { display: flex; gap: 20px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+.price-options { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
 .price-option { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1 1 160px; }
 .price-option-val { font-family: var(--font-compressed); font-size: 32px; font-weight: 900; color: var(--brand-orange); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .price-option-alt .price-option-val { color: #8A5A00; }
