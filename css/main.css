@@ -573,18 +573,34 @@ a { color: inherit; }
 /* =========================================================
    SCHEDULE TABLES
    ========================================================= */
-.schedule-block { margin-bottom: 32px; }
+.schedule-block { margin-bottom: 40px; }
 .schedule-block:last-child { margin-bottom: 0; }
-.schedule-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--ink-900); margin: 0 0 14px; }
-.schedule-table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border-2); background: #fff; }
-.schedule-table { width: 100%; border-collapse: collapse; font-size: 13.5px; white-space: nowrap; }
-.schedule-table th, .schedule-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-2); }
-.schedule-table tr:last-child td { border-bottom: 0; }
-.schedule-table th { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-500); background: var(--bg-2); }
-.schedule-table td:first-child { font-weight: 800; color: var(--ink-900); font-variant-numeric: tabular-nums; }
-.schedule-table .schedule-break { text-align: center; font-style: italic; color: var(--ink-500); background: var(--bg-2); }
+.schedule-title { font-family: var(--font-display); font-size: 19px; font-weight: 800; color: var(--ink-900); margin: 0 0 16px; display: flex; align-items: center; gap: 10px; }
+.schedule-title::before { content: ""; width: 8px; height: 8px; border-radius: 9999px; background: var(--brand-orange); flex: 0 0 8px; }
+
+.schedule-table-wrap { overflow-x: auto; overflow-y: hidden; border-radius: 18px; border: 1px solid var(--border-2); background: #fff; box-shadow: var(--shadow-sm); }
+.schedule-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13.5px; white-space: nowrap; }
+.schedule-table th, .schedule-table td { padding: 15px 20px; text-align: left; border-bottom: 1px solid var(--border-2); }
+.schedule-table tbody tr:last-child td { border-bottom: 0; }
+.schedule-table thead th { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-600); background: var(--bg-2); border-bottom: 2px solid var(--brand-orange); }
+.schedule-table tbody tr { transition: background-color .15s var(--ease-out); }
+.schedule-table tbody tr:hover td { background: var(--brand-orange-50); }
+.schedule-table tbody tr:hover td:first-child { background: var(--brand-orange-100); }
+.schedule-table td:first-child { font-weight: 800; color: var(--brand-orange-700); background: var(--brand-orange-50); font-variant-numeric: tabular-nums; border-right: 1px solid var(--border-2); letter-spacing: .01em; }
+.schedule-table td small { display: inline; margin-left: 2px; font-size: 11.5px; font-weight: 600; color: var(--ink-400); }
+.schedule-table .schedule-break { text-align: center; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-400); background: var(--paper-3); }
 .schedule-table-compact { max-width: 360px; }
 .schedule-note { font-size: 13.5px; color: var(--ink-500); line-height: 1.55; margin: 12px 0 0; }
+
+/* Compact lesson timeline (e.g. Pré-PASES · 4 aulas) */
+.lesson-timeline { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border-2); border-radius: 18px; padding: 6px 22px; max-width: 360px; box-shadow: var(--shadow-sm); }
+.lesson-step { display: flex; align-items: center; gap: 16px; padding: 15px 0; position: relative; }
+.lesson-step:not(:last-child)::after { content: ""; position: absolute; left: 15px; top: 45px; bottom: -15px; width: 2px; background: var(--border-2); }
+.lesson-step:not(:last-child) { border-bottom: 1px dashed transparent; }
+.lesson-num { width: 32px; height: 32px; border-radius: 9999px; background: var(--brand-orange); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 900; font-size: 13px; flex: 0 0 32px; position: relative; z-index: 1; box-shadow: var(--shadow-accent-sm); }
+.lesson-info { display: flex; flex-direction: column; gap: 2px; }
+.lesson-label { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-500); }
+.lesson-time { font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--ink-900); font-variant-numeric: tabular-nums; }
 
 /* =========================================================
    TEACHER CARDS
