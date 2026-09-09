@@ -243,6 +243,7 @@ a { color: inherit; }
    ========================================================= */
 .hero { padding: 120px 0 100px; background: linear-gradient(180deg, #FEF3EB 0%, #FFFFFF 100%); position: relative; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: start; }
+.hero-solo { max-width: 760px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-orange); padding: 8px 14px; border-radius: 9999px; background: var(--brand-orange-50); width: fit-content; }
 .hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -.02em; font-weight: 900; margin: 18px 0 18px; color: var(--ink-900); text-wrap: balance; }
 .hero h1 em { color: var(--brand-orange); font-style: normal; }
